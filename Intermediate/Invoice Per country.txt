@@ -1,5 +1,5 @@
-SELECT co.country_name, count(*), AVG(i.total_price)
-FROM country co, city ci, customer cu, invoice i
-WHERE co.id = ci.country_id AND ci.id = cu.city_id AND cu.id = i.customer_id
+SELECT a.country_name, count(*), AVG(d.total_price)
+FROM country a, city b, customer c, invoice d
+WHERE a.id = b.country_id AND b.id = c.city_id AND c.id = d.customer_id
 GROUP BY co.country name
 HAVING AVG(i.total_price) > (SELECT AVG(total price))
